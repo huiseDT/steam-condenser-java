@@ -69,7 +69,7 @@ public abstract class Server {
                 throw new SteamCondenserException("Cannot resolve " + address + ": " + e.getMessage());
             }
         } else if(address instanceof InetAddress) {
-            this.hostNames.add(((InetAddress) address).getHostName());
+            //this.hostNames.add(((InetAddress) address).getHostName());
             this.ipAddresses.add((InetAddress) address);
         }
 
