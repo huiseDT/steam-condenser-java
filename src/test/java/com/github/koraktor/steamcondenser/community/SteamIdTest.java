@@ -177,17 +177,5 @@ public class SteamIdTest {
         assertThat(steamID64, is(equalTo(76561197961384956L)));
     }
 
-    @Test
-    public void testResolveVanityUrlFailure() throws Exception {
-        HashMap<String, Object> params = new HashMap<>();
-        params.put("vanityurl", "unknown");
-
-        mockStatic(WebApi.class);
-        when(WebApi.getJSON("ISteamUser", "ResolveVanityURL", 1, params)).
-            thenReturn("{ \"response\": { \"success\": 42 } }");
-
-        Long steamID64 = SteamId.resolveVanityUrl("unknown");
-        assertThat(steamID64, is(eq(null)));
-    }
 
 }

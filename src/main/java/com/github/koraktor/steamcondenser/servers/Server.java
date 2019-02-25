@@ -62,7 +62,7 @@ public abstract class Server {
 
             try {
                 for(InetAddress ipAddress : InetAddress.getAllByName((String) address)) {
-                    this.hostNames.add(ipAddress.getHostName());
+                    //this.hostNames.add(ipAddress.getHostName());
                     this.ipAddresses.add(ipAddress);
                 }
             } catch(UnknownHostException e) {
